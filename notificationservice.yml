@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: notificationservice
+  cloud:
+    netflix:
+      eureka:
+        client:
+          service-url:
+            defaultZone: http://localhost:8761/eureka/
+    config:
+      uri: http://localhost:8888
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    topic:
+      user-topic: user-topic
+
+  mail:
+    host: smtp.example.com
+    port: 587
+    username: your-email@example.com
+    password: your-email-password
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework: DEBUG
+  file:
+    name: logs/app.log

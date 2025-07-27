@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service-kafka2
+          predicates:
+            - Path=/app/users/**
+  discovery:
+    client:
+      service-url:
+        defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/GOV2022/RepoConfigServer.git # URL вашего репозитория с конфигурацией
+          search-paths: '{application}' # Путь к конфигурациям
+          clone-on-start: true # Опционально: клонировать репозиторий при старте
